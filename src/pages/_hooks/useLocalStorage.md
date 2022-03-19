@@ -6,16 +6,16 @@ sandbox: https://codesandbox.io/s/qxkr4mplv6
 links:
   - url: https://github.com/donavon/use-persisted-state
     name: use-persisted-state
-    description: A more advanced implementation that syncs between tabs and browser windows.
+    description: Uma implementação mais avançada que sincroniza entre guias e janelas do navegador.
 isMultilingual: true
 ---
 
-Sync state to local storage so that it persists through a page refresh.
-Usage is similar to useState except we pass in a local storage key so that we can
-default to that value on page load instead of the specified initial value.
+Sincroniza o estado para o localStorage, assim os dados vão persistir entre um refresh.
+Seu uso é similar ao useState, exceto que passamos uma chave do localStorage para que
+possamos definir o valor persistido enquanto a página carrega, ao invés do valor inicial.
 
-Since the local storage API isn't available in server-rendering environments,
-we check that `typeof window !== "undefined"` to make SSR and SSG work properly.
+Sabendo que a localStorage API não está disponível em ambientes de server-side rendering,
+fazemos uma pequena checagem para fazer o uso comum do SSR e SSG.
 
 ```jsx
 import { useState } from "react";

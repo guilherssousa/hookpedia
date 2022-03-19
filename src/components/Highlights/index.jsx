@@ -2,7 +2,7 @@ import { Box, Heading, Flex, Grid } from "@chakra-ui/react";
 
 import { HookCard } from "./HookCard";
 
-function Highlights({ title, emoji }) {
+function Highlights({ title, emoji, cards }) {
   return (
     <Box
       bg="gray.800"
@@ -29,9 +29,9 @@ function Highlights({ title, emoji }) {
           direction="row"
           wrap="wrap"
         >
-          <HookCard />
-          <HookCard />
-          <HookCard />
+          {cards.map((hook, index) => {
+            return <HookCard hook={hook} key={index} />;
+          })}
         </Grid>
       </Box>
     </Box>

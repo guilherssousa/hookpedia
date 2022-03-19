@@ -52,7 +52,7 @@ function Navbar() {
             <Image src="/logo.svg" height="36px"></Image>
           </Link>
           <HStack>
-            <Box textColor="white">
+            <Box textColor="white" cursor="default">
               <Kbd
                 bg="transparent"
                 style={{

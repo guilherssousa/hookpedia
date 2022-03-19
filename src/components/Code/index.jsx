@@ -3,10 +3,18 @@ import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
 import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
+import { Box, Button } from "@chakra-ui/react";
+
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 SyntaxHighlighter.registerLanguage("tsx", tsx);
 
-function Code({ children, lang, expected }) {
+function Code({
+  children,
+  lang,
+  expected,
+  isCodeSwitchAvailable,
+  handleSwitchCodeClick,
+}) {
   if (!expected) {
     return <code>{children}</code>;
   }
@@ -21,15 +29,30 @@ function Code({ children, lang, expected }) {
   if (expectedLanguage[expected] != lang) return null;
 
   return (
-    <SyntaxHighlighter
-      language={lang}
-      style={atomDark}
-      customStyle={{
-        marginTop: "1.5em",
-      }}
-    >
-      {children}
-    </SyntaxHighlighter>
+    <>
+      {isCodeSwitchAvailable && (
+        <Box>
+          <Button
+            mt="4"
+            colorScheme={lang === "jsx" ? "blue" : "yellow"}
+            onClick={handleSwitchCodeClick}
+          >
+            Veja em {lang === "jsx" ? "TypeScript" : "JavaScript"}
+          </Button>
+        </Box>
+      )}
+      <div>
+        <SyntaxHighlighter
+          language={lang}
+          style={atomDark}
+          customStyle={{
+            marginTop: "1.5em",
+          }}
+        >
+          {children}
+        </SyntaxHighlighter>
+      </div>
+    </>
   );
 }
 

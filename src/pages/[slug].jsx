@@ -4,17 +4,19 @@ import Head from "next/head";
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import moment from "moment";
 
-import { Box, Heading, Button, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, Stack } from "@chakra-ui/react";
 
 import { Navbar } from "components/Navbar";
 import { SearchPalette } from "components/SearchPalette";
 import { Footer } from "components/Footer";
+import { Link } from "components/Link";
 
 import { Code } from "components/Code";
 
 function HookPage(props) {
-  const { title, content, isMultilingual } = props;
+  const { title, date, content, isMultilingual, gist, sandbox } = props;
 
   const [lang, setLang] = useState("jsx");
   const isCodeSwitchAvailable = useMemo(
@@ -25,6 +27,12 @@ function HookPage(props) {
   const handleSwitchCodeClick = useCallback(() => {
     setLang((value) => (value === "jsx" ? "tsx" : "jsx"));
   }, []);
+
+  const Bull = () => (
+    <Box mx="2" display={{ base: "none", md: "block" }}>
+      &bull;
+    </Box>
+  );
 
   return (
     <>
@@ -42,8 +50,33 @@ function HookPage(props) {
           borderTop="1px"
           borderTopColor="gray.600"
         >
-          <Box maxW="container.xl" mx="auto">
+          <Box maxW="container.lg" mx="auto">
             <Heading mb="4">{title}</Heading>
+
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              align="left"
+              mb="4"
+            >
+              <Text>{moment(date).format("LL")}</Text>
+              {gist && (
+                <>
+                  <Bull />
+                  <Link href={gist} isExternal>
+                    Gist
+                  </Link>
+                </>
+              )}
+              {sandbox && (
+                <>
+                  <Bull />
+                  <Link href={sandbox} isExternal>
+                    Sandbox
+                  </Link>
+                </>
+              )}
+            </Stack>
+
             <ReactMarkdown
               children={content}
               components={{
@@ -51,7 +84,12 @@ function HookPage(props) {
                 div: Box,
                 code({ children, className }) {
                   return (
-                    <Code lang={lang} expected={className}>
+                    <Code
+                      lang={lang}
+                      isCodeSwitchAvailable={isCodeSwitchAvailable}
+                      handleSwitchCodeClick={handleSwitchCodeClick}
+                      expected={className}
+                    >
                       {children}
                     </Code>
                   );
@@ -59,19 +97,6 @@ function HookPage(props) {
               }}
               remarkPlugins={[remarkGfm]}
             ></ReactMarkdown>
-
-            <Box language={lang} />
-            {isCodeSwitchAvailable && (
-              <Box>
-                <Button
-                  mt="2"
-                  colorScheme={lang === "jsx" ? "blue" : "yellow"}
-                  onClick={handleSwitchCodeClick}
-                >
-                  Veja em {lang === "jsx" ? "TypeScript" : "JavaScript"}
-                </Button>
-              </Box>
-            )}
           </Box>
         </Box>
         <SearchPalette />

@@ -13,9 +13,13 @@ export async function getAllHooks() {
     const content = await import(`../_hooks/${post}`);
     const meta = matter(content.default);
 
+    // remove all markdown from meta.content;
+    const description = meta.content.replace(/<[^>]*>/g, "");
+
     hooks.push({
       slug: post.replace(".md", ""),
       title: meta.data.title,
+      description,
     });
   }
 

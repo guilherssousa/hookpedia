@@ -1,12 +1,15 @@
-import { Link, GridItem, Heading, Text } from "@chakra-ui/react";
+import { GridItem, Heading, Text } from "@chakra-ui/react";
 
-function HookCard() {
+import { Link } from "components/Link";
+
+function HookCard({ hook }) {
   return (
     <Link
       display="block"
       _hover={{
         textDecoratrion: "none",
       }}
+      href={`/${hook.slug}`}
       m="2"
     >
       <GridItem
@@ -15,13 +18,13 @@ function HookCard() {
         borderRadius="md"
         transition={["all", "0.2s", "ease-in-out", "0.2s"]}
         _hover={{ bgColor: "gray.600" }}
+        h="100%"
       >
         <Heading as="h5" size="md">
-          useLocalStorage
+          {hook.title}
         </Heading>
         <Text color="gray.400" mt="2">
-          Sincronize o estado com usando a localStorage para que os dados
-          persistam após o refresh da página.
+          {hook.description.split(" ").slice(0, 20).join(" ")}...
         </Text>
       </GridItem>
     </Link>
