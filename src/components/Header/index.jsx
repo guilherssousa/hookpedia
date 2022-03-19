@@ -7,6 +7,7 @@ import {
   Text,
   Stack,
   Link,
+  Image,
 } from "@chakra-ui/react";
 
 function Header() {
@@ -67,7 +68,7 @@ function Header() {
                 fontSize={20}
                 p={[4, 6, 8]}
                 leftIcon={
-                  <img src="/github.svg" alt="GitHub" height={24} width={24} />
+                  <Image src="/github.svg" alt="GitHub" height={6} width={6} />
                 }
                 _hover={{
                   bg: "gray.600",
