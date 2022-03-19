@@ -78,7 +78,6 @@ function HookPage(props) {
             </Stack>
 
             <ReactMarkdown
-              children={content}
               components={{
                 p: Text,
                 div: Box,
@@ -96,7 +95,9 @@ function HookPage(props) {
                 },
               }}
               remarkPlugins={[remarkGfm]}
-            ></ReactMarkdown>
+            >
+              {content}
+            </ReactMarkdown>
           </Box>
         </Box>
         <SearchPalette />
