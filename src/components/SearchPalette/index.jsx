@@ -12,6 +12,8 @@ import { Search2Icon } from "@chakra-ui/icons";
 
 function SearchPalette({ isOpen, onClose, onOpen }) {
   useEventListener("keydown", (event) => {
+    if (!onClose || !onOpen) return;
+
     if (event.code === "KeyK" && (event.ctrlKey || event.metaKey)) {
       event.preventDefault();
       isOpen ? onClose() : onOpen();

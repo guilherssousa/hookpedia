@@ -6,12 +6,9 @@ import { Navbar } from "components/Navbar";
 import { Header } from "components/Header";
 import { Presentation } from "components/Presentation";
 import { Highlights } from "components/Highlights";
-import { SearchPalette } from "components/SearchPalette";
 import { Footer } from "components/Footer";
 
 export default function Home() {
-  const modal = useDisclosure();
-
   return (
     <>
       <Head>
@@ -19,8 +16,7 @@ export default function Home() {
       </Head>
 
       <Box bg="gray.800">
-        <Navbar openModal={modal.onOpen} />
-        <SearchPalette {...modal} />
+        <Navbar />
         <Header />
         <Highlights
           title="Os melhores Hooks"

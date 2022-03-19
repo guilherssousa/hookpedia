@@ -20,6 +20,9 @@
   },
   "devDependencies": {
     "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0"
+    "eslint-config-next": "12.1.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^1.1.1",
+    "raw-loader": "^4.0.2"
   }
 }
