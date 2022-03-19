@@ -5,7 +5,6 @@ import {
   ModalContent,
   useDisclosure,
   useEventListener,
-  Box,
   Flex,
   Center,
 } from "@chakra-ui/react";
