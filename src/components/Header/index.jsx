@@ -30,7 +30,7 @@ function Header() {
         >
           <Heading
             as="h2"
-            fontSize={{ base: "4xl", md: "6xl" }}
+            fontSize={{ base: "32", md: "6xl" }}
             align="center"
             lineHeight="normal"
           >
@@ -54,8 +54,14 @@ function Header() {
             comunidade. Atualmente temos 39 hooks!
           </Text>
 
-          <Stack mt="4" direction="row">
-            <Button colorScheme="blue" size="lg" fontSize={20} p={[4, 6, 8]}>
+          <Stack mt="4" direction={{ base: "column", md: "row" }}>
+            <Button
+              colorScheme="blue"
+              size="lg"
+              fontSize={20}
+              p={[4, 6, 8]}
+              w={{ sm: "60vw", md: 40 }}
+            >
               Ver os Hooks
             </Button>
 
@@ -78,6 +84,7 @@ function Header() {
                 }}
                 bg="gray.700"
                 size="lg"
+                w={{ sm: "60vw", md: 60 }}
               >
                 Ver repositório
               </Button>
