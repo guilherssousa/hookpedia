@@ -3,7 +3,6 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  useDisclosure,
   useEventListener,
   Flex,
   Center,
@@ -11,9 +10,7 @@ import {
 
 import { Search2Icon } from "@chakra-ui/icons";
 
-function SearchPalette() {
-  const { isOpen, onClose, onOpen } = useDisclosure();
-
+function SearchPalette({ isOpen, onClose, onOpen }) {
   useEventListener("keydown", (event) => {
     if (event.code === "KeyK" && (event.ctrlKey || event.metaKey)) {
       event.preventDefault();

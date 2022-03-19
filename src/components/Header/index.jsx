@@ -7,7 +7,6 @@ import {
   Text,
   Stack,
   Link,
-  Kbd,
 } from "@chakra-ui/react";
 
 function Header() {
@@ -28,21 +27,25 @@ function Header() {
           maxW="4xl"
           mx="auto"
         >
-          <Heading as="h2" size="4xl" align="center" lineHeight="normal">
+          <Heading
+            as="h2"
+            fontSize={{ base: "4xl", md: "6xl" }}
+            align="center"
+            lineHeight="normal"
+          >
             A{" "}
             <chakra.span
               bgGradient="linear(to-l, blue.400, blue.200, blue.300)"
               bgClip="text"
             >
-              cola suprema
+              cola definitiva
             </chakra.span>{" "}
             para desenvolvedores React.
           </Heading>
           <Text
             mt="4"
-            fontSize="xl"
+            fontSize={{ base: "lg", md: "xl" }}
             color="gray.300"
-            noOfLines={2}
             maxW="xl"
             textAlign="center"
           >
@@ -51,14 +54,18 @@ function Header() {
           </Text>
 
           <Stack mt="4" direction="row">
-            <Button colorScheme="blue" size="lg" fontSize={20} p={8}>
+            <Button colorScheme="blue" size="lg" fontSize={20} p={[4, 6, 8]}>
               Ver os Hooks
             </Button>
 
-            <Link isExternal href="https://github.com/guilherssousa/hookpedia">
+            <Link
+              isExternal
+              href="https://github.com/guilherssousa/hookpedia"
+              _hover={{ textDecor: "none" }}
+            >
               <Button
                 fontSize={20}
-                p={8}
+                p={[4, 6, 8]}
                 leftIcon={
                   <img src="/github.svg" alt="GitHub" height={24} width={24} />
                 }
@@ -75,10 +82,6 @@ function Header() {
               </Button>
             </Link>
           </Stack>
-          <Text mt="2">
-            Use <Kbd textColor={"black"}>Ctrl</Kbd> +{" "}
-            <Kbd textColor={"black"}>K</Kbd> para usar a função de busca.
-          </Text>
         </Flex>
       </Box>
     </chakra.div>
