@@ -60,7 +60,7 @@ function Header() {
               size="lg"
               fontSize={20}
               p={[4, 6, 8]}
-              w={{ sm: "60vw", md: 40 }}
+              w={{ sm: "80vw", md: 40 }}
             >
               Ver os Hooks
             </Button>
@@ -84,7 +84,7 @@ function Header() {
                 }}
                 bg="gray.700"
                 size="lg"
-                w={{ sm: "60vw", md: 60 }}
+                w={{ sm: "80vw", md: 60 }}
               >
                 Ver repositório
               </Button>
