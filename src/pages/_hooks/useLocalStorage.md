@@ -1,6 +1,6 @@
 ---
 title: useLocalStorage
-date: 2018-10-29
+date: "2018-10-29"
 gist: https://gist.github.com/gragland/2970ae543df237a07be1dbbf810f23fe
 sandbox: https://codesandbox.io/s/qxkr4mplv6
 links:
