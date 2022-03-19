@@ -7,6 +7,7 @@ import {
   Text,
   Stack,
   Link,
+  Kbd,
 } from "@chakra-ui/react";
 
 function Header() {
@@ -74,6 +75,10 @@ function Header() {
               </Button>
             </Link>
           </Stack>
+          <Text mt="2">
+            Use <Kbd textColor={"black"}>Ctrl</Kbd> +{" "}
+            <Kbd textColor={"black"}>K</Kbd> para usar a função de busca.
+          </Text>
         </Flex>
       </Box>
     </chakra.div>
