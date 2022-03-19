@@ -11,7 +11,7 @@ function Footer() {
       borderTopColor="gray.600"
     >
       <Box maxW="container.xl" mx="auto">
-        <Text color="gray.400" fontSize={"small"}>
+        <Text color="gray.400" fontSize={18}>
           Criado por{" "}
           <Link
             isExternal
