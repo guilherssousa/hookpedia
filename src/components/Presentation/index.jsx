@@ -1,8 +1,7 @@
-import dynamic from "next/dynamic";
 import { Box, Grid, Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-const Topic = dynamic(() => import("./Topic"));
+import { Topic } from "./Topic";
 
 function Presentation() {
   return (
