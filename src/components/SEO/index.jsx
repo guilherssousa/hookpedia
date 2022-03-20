@@ -17,7 +17,10 @@ function SEO() {
       ></meta>
 
       <meta property="og:site_name" content="Hookpedia"></meta>
-      <meta property="og:image" content={"/hookpedia.png"}></meta>
+      <meta
+        property="og:image"
+        content={"https://hookpedia.vercel.app/hookpedia.png"}
+      ></meta>
       <meta
         property="og:image:secure_url"
         content={"https://hookpedia.vercel.app/"}
@@ -28,7 +31,10 @@ function SEO() {
         name="twitter:title"
         content={`Hookpedia: A cola definitiva para desenvolvedores React.`}
       ></meta>
-      <meta name="twitter:image" content={"/hookpedia.png"}></meta>
+      <meta
+        name="twitter:image"
+        content={"https://hookpedia.vercel.app/hookpedia.png"}
+      ></meta>
     </>
   );
 }
