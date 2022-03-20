@@ -79,6 +79,7 @@ function Navbar() {
                 bg: "none",
                 filter: "brightness(70%)",
               }}
+              aria-label="Pesquisar por Hooks"
             >
               <Search2Icon color="white" w={6} h={6} />
             </Button>
