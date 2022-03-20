@@ -50,7 +50,7 @@ function Header() {
             maxW="xl"
             textAlign="center"
           >
-            Uma fábrica de receitas de Hooks do React, da comunidade para a
+            Um repositório de Hooks do React, feito pela comunidade para a
             comunidade. Atualmente temos 39 hooks!
           </Text>
 

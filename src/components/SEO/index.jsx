@@ -20,7 +20,7 @@ function SEO() {
       <meta property="og:image" content={"/hookpedia.png"}></meta>
       <meta
         property="og:image:secure_url"
-        content={"https://hookpedia.now.sh/"}
+        content={"https://hookpedia.vercel.app/"}
       ></meta>
       <meta property="og:image:type" content="image/png"></meta>
       <meta name="twitter:card" content="summary"></meta>

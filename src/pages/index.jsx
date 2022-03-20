@@ -14,7 +14,7 @@ export default function Home({ hooks }) {
   return (
     <>
       <Head>
-        <title>Hookpedia | Repositório de React Hooks</title>
+        <title>Hookpedia: A cola definitiva para desenvolvedores React.</title>
         <SEO />
       </Head>
 
