@@ -1,7 +1,8 @@
+import loadable from "@loadable/component";
 import { Box, Grid, Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-import { Topic } from "./Topic";
+const Topic = loadable(() => import("./Topic"));
 
 function Presentation() {
   return (

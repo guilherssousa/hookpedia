@@ -1,4 +1,5 @@
 import {
+  chakra,
   Box,
   Button,
   Flex,
@@ -18,7 +19,7 @@ function Header() {
       position="relative"
       px="8"
     >
-      <Box maxW="container.xl" mx="auto" position="relative" zIndex={10}>
+      <chakra.div maxW="container.xl" mx="auto" position="relative" zIndex={10}>
         <Flex
           direction="column"
           align="center"
@@ -34,13 +35,13 @@ function Header() {
             lineHeight="normal"
           >
             A{" "}
-            <Box
+            <chakra.span
               display="inline"
               bgGradient="linear(to-l, blue.400, blue.200, blue.300)"
               bgClip="text"
             >
               cola definitiva
-            </Box>{" "}
+            </chakra.span>{" "}
             para desenvolvedores React.
           </Heading>
           <Text
@@ -94,7 +95,7 @@ function Header() {
             </Link>
           </Stack>
         </Flex>
-      </Box>
+      </chakra.div>
     </Box>
   );
 }

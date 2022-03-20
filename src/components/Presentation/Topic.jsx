@@ -13,4 +13,4 @@ function Topic({ title, children }) {
   );
 }
 
-export { Topic };
+export default Topic;
