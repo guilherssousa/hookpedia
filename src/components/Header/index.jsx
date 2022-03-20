@@ -56,11 +56,14 @@ function Header() {
 
           <Stack mt="4" direction={{ base: "column", md: "row" }}>
             <Button
-              colorScheme="blue"
+              bg="blue.700"
               size="lg"
               fontSize={20}
               p={[4, 6, 8]}
               w={{ sm: "80vw", md: 40 }}
+              _hover={{
+                bg: "blue.600",
+              }}
             >
               Ver os Hooks
             </Button>
