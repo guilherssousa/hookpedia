@@ -1,6 +1,19 @@
-const { Link, Box, Text } = require("@chakra-ui/react");
+import { Link, Box, Text } from "@chakra-ui/react";
+
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Footer() {
+  const [contributors, setContributors] = useState(1);
+
+  useEffect(() => {
+    axios
+      .get("https://api.github.com/repos/guilherssousa/hookpedia/contributors")
+      .then((res) => {
+        setContributors(res.data.length);
+      });
+  }, []);
+
   return (
     <Box
       bg="gray.800"
@@ -20,13 +33,13 @@ function Footer() {
           >
             @guilherssousa
           </Link>
-          , mantido pela{" "}
+          , mantido por{" "}
           <Link
             isExternal
             href="https://github.com/guilherssousa/hookpedia/contributors"
             fontWeight={"bold"}
           >
-            comunidade
+            {contributors} pessoas
           </Link>{" "}
           💗
         </Text>
