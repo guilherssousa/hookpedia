@@ -46,9 +46,9 @@ function Presentation() {
           <Topic title="Como adicionar meus próprios Hooks?">
             Seguimos alguns padrões para ter uma organização melhor de
             submissões de Hooks.{" "}
-            <Link textColor="blue.400">
+            {/* <Link textColor="blue.400">
               Clique aqui para entender o processo de aprovação de Hooks.
-            </Link>
+            </Link> */}
           </Topic>
         </Grid>
       </Box>

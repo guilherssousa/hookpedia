@@ -20,7 +20,7 @@ function HookCard({ hook }) {
         _hover={{ bgColor: "gray.600" }}
         h="100%"
       >
-        <Heading as="h5" size="md">
+        <Heading as="h3" size="md">
           {hook.title}
         </Heading>
         <Text color="gray.400" mt="2">

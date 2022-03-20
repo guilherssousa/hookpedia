@@ -49,7 +49,7 @@ function Navbar() {
           justify="space-between"
         >
           <Link href="/">
-            <Image src="/logo.svg" height="36px"></Image>
+            <Image src="/logo.svg" alt="Hookpedia" height="36px"></Image>
           </Link>
           <HStack>
             <Box textColor="white" cursor="default">
@@ -88,7 +88,13 @@ function Navbar() {
               isExternal
               hideIcon
             >
-              <Image src="/github.svg" w={6} h={6} color="#fff" />
+              <Image
+                src="/github.svg"
+                alt="Repositório no GitHub"
+                w={6}
+                h={6}
+                color="#fff"
+              />
             </Link>
           </HStack>
         </Flex>

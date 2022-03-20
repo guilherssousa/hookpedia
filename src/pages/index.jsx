@@ -27,6 +27,7 @@ export default function Home({ hooks }) {
           emoji={
             <Image
               src="/sparkles.png"
+              alt="Brilho!"
               boxSize={{ base: "35px", md: "20px", lg: "40px" }}
               display="inline"
               ml="2"
