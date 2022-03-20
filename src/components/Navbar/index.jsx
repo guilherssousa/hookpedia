@@ -49,7 +49,12 @@ function Navbar() {
           justify="space-between"
         >
           <Link href="/">
-            <Image src="/logo.svg" alt="Hookpedia" height="36px"></Image>
+            <Image
+              src="/logo.svg"
+              alt="Hookpedia"
+              height="36px"
+              width="138px"
+            ></Image>
           </Link>
           <HStack>
             <Box textColor="white" cursor="default">
