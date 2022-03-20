@@ -1,3 +1,4 @@
+import { useState, useMemo, useEffect } from "react";
 import {
   chakra,
   Modal,
@@ -6,22 +7,57 @@ import {
   useEventListener,
   Flex,
   Center,
+  Box,
+  Text,
 } from "@chakra-ui/react";
 
 import { Search2Icon } from "@chakra-ui/icons";
 
+import { api } from "services/api";
+import { Link } from "components/Link";
+
 function SearchPalette({ isOpen, onClose, onOpen }) {
+  const [query, setQuery] = useState("");
+  const [hooks, setHooks] = useState([]);
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    async function fetchHooks() {
+      const { data } = await api.get("/hooks");
+      setHooks(data);
+    }
+
+    fetchHooks();
+  }, []);
+
+  function customOnClose() {
+    onClose();
+    setQuery("");
+  }
+
   useEventListener("keydown", (event) => {
     if (!onClose || !onOpen) return;
 
     if (event.code === "KeyK" && (event.ctrlKey || event.metaKey)) {
       event.preventDefault();
-      isOpen ? onClose() : onOpen();
+      isOpen ? customOnClose() : onOpen();
     }
   });
 
+  useMemo(() => {
+    const _results = hooks.filter((hook) => {
+      return hook.title.toLowerCase().includes(query.toLowerCase());
+    });
+
+    setResults(_results);
+  }, [query, hooks]);
+
+  const handleChange = (event) => {
+    setQuery(event.target.value);
+  };
+
   return (
-    <Modal isOpen={isOpen} scrollBehavior="inside" onClose={onClose}>
+    <Modal isOpen={isOpen} scrollBehavior="inside" onClose={customOnClose}>
       <ModalOverlay />
       <ModalContent
         bgColor="gray.700"
@@ -41,8 +77,12 @@ function SearchPalette({ isOpen, onClose, onOpen }) {
             autoCorrect="off"
             spellCheck="false"
             maxLength={64}
+            value={query}
+            onChange={handleChange}
             textColor="white"
             bg="gray.700"
+            borderBottom="1px solid"
+            borderBottomColor="gray.600"
             sx={{
               w: "100%",
               h: "68px",
@@ -56,6 +96,35 @@ function SearchPalette({ isOpen, onClose, onOpen }) {
             <Search2Icon color="teal.500" boxSize="20px" />
           </Center>
         </Flex>
+        <Box py="4">
+          {query.length > 1 ? (
+            results.slice(0, 10).map((result) => (
+              <Link
+                px="8"
+                py="2"
+                color="#FFF"
+                fontWeight={"bold"}
+                fontSize="md"
+                key={`query-result-${result.title}`}
+                href={`/${result.slug}`}
+                display="block"
+                style={{
+                  textDecoration: "none",
+                  boxShadow: "none",
+                  margin: 0,
+                }}
+                onClick={customOnClose}
+                _hover={{
+                  bg: "blue.600",
+                }}
+              >
+                {result.title}
+              </Link>
+            ))
+          ) : (
+            <Text>Não há hooks com esse nome :&#40;</Text>
+          )}
+        </Box>
       </ModalContent>
     </Modal>
   );

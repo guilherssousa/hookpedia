@@ -36,3 +36,16 @@ export async function getHookBySlug(slug) {
     content: meta.content,
   };
 }
+
+export default async function handler(req, res) {
+  const hooks = await getAllHooks();
+
+  return res.json(
+    hooks.map((hook) => {
+      return {
+        title: hook.title,
+        slug: hook.slug,
+      };
+    })
+  );
+}

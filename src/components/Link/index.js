@@ -3,7 +3,6 @@ import { Link as ChakraLink } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 function Link({ children, isExternal, href, ...rest }) {
-  console.log(rest);
   if (isExternal)
     return (
       <ChakraLink
