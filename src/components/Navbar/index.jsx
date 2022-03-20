@@ -87,6 +87,7 @@ function Navbar() {
               href="https://github.com/guilherssousa/hookpedia"
               isExternal
               hideIcon
+              aria-label="Repositório no GitHub"
             >
               <Image
                 src="/github.svg"
