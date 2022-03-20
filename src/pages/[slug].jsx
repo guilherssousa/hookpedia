@@ -4,7 +4,6 @@ import Head from "next/head";
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import moment from "moment";
 
 import { Box, Heading, Text, Stack, Flex, Image } from "@chakra-ui/react";
 
@@ -67,7 +66,13 @@ function HookPage(props) {
               align="left"
               mb="4"
             >
-              <Text>{moment(date).format("LL")}</Text>
+              <Text>
+                {new Date(date).toLocaleDateString("pt-BR", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </Text>
               {gist && (
                 <>
                   <Bull />
