@@ -1,8 +1,8 @@
-import loadable from "@loadable/component";
+import dynamic from "next/dynamic";
 import { Box, Grid, Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-const Topic = loadable(() => import("./Topic"));
+const Topic = dynamic(() => import("./Topic"));
 
 function Presentation() {
   return (

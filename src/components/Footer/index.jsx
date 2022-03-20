@@ -1,17 +1,22 @@
 import { Link, Box, Text } from "@chakra-ui/react";
 
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 function Footer() {
   const [contributors, setContributors] = useState(1);
 
   useEffect(() => {
-    axios
-      .get("https://api.github.com/repos/guilherssousa/hookpedia/contributors")
-      .then((res) => {
-        setContributors(res.data.length);
-      });
+    async function loadContributors() {
+      const axios = (await import("axios")).default;
+
+      const { data } = await axios.get(
+        "https://api.github.com/repos/guilherssousa/hookpedia/contributors"
+      );
+
+      setContributors(data.length);
+    }
+
+    loadContributors();
   }, []);
 
   return (
