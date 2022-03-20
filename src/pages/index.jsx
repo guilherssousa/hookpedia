@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import { Image, Box } from "@chakra-ui/react";
 
+import { SEO } from "components/SEO";
 import { Navbar } from "components/Navbar";
 import { Header } from "components/Header";
 import { Presentation } from "components/Presentation";
@@ -14,6 +15,7 @@ export default function Home({ hooks }) {
     <>
       <Head>
         <title>Hookpedia | Repositório de React Hooks</title>
+        <SEO />
       </Head>
 
       <Box bg="gray.800">
