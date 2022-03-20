@@ -17,9 +17,10 @@ import { api } from "services/api";
 import { Link } from "components/Link";
 
 function SearchPalette({ isOpen, onClose, onOpen }) {
-  const [query, setQuery] = useState("");
   const [hooks, setHooks] = useState([]);
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
     async function fetchHooks() {
@@ -33,6 +34,7 @@ function SearchPalette({ isOpen, onClose, onOpen }) {
   function customOnClose() {
     onClose();
     setQuery("");
+    setActive(0);
   }
 
   useEventListener("keydown", (event) => {
@@ -46,7 +48,9 @@ function SearchPalette({ isOpen, onClose, onOpen }) {
 
   useMemo(() => {
     const _results = hooks.filter((hook) => {
-      return hook.title.toLowerCase().includes(query.toLowerCase());
+      return hook.title
+        .toLowerCase()
+        .includes(query.split(" ").join("").toLowerCase());
     });
 
     setResults(_results);
@@ -96,35 +100,47 @@ function SearchPalette({ isOpen, onClose, onOpen }) {
             <Search2Icon color="teal.500" boxSize="20px" />
           </Center>
         </Flex>
-        <Box py="4">
-          {query.length > 1 ? (
-            results.slice(0, 10).map((result) => (
-              <Link
-                px="8"
-                py="2"
-                color="#FFF"
-                fontWeight={"bold"}
-                fontSize="md"
-                key={`query-result-${result.title}`}
-                href={`/${result.slug}`}
-                display="block"
-                style={{
-                  textDecoration: "none",
-                  boxShadow: "none",
-                  margin: 0,
-                }}
-                onClick={customOnClose}
-                _hover={{
-                  bg: "blue.600",
-                }}
-              >
-                {result.title}
-              </Link>
-            ))
-          ) : (
-            <Text>Não há hooks com esse nome :&#40;</Text>
-          )}
-        </Box>
+        {results.length >= 1 && query.length > 1 ? (
+          <Box py="4">
+            {results.slice(0, 10).map((result, index) => {
+              const selected = index === active;
+
+              return (
+                <Link
+                  px="8"
+                  py="2"
+                  color="#FFF"
+                  fontWeight={"bold"}
+                  fontSize="md"
+                  key={`query-result-${result.title}`}
+                  href={`/${result.slug}`}
+                  role="option"
+                  display="block"
+                  aria-selected={selected ? true : undefined}
+                  style={{
+                    textDecoration: "none",
+                    boxShadow: "none",
+                    margin: 0,
+                  }}
+                  onClick={customOnClose}
+                  _focus={{
+                    bg: "blue.600",
+                  }}
+                >
+                  {result.title}
+                </Link>
+              );
+            })}
+          </Box>
+        ) : (
+          query.length > 1 && (
+            <Box py="4">
+              <Center color="gray.400" fontWeight="bold">
+                Não há hooks com esse nome :&#40;
+              </Center>
+            </Box>
+          )
+        )}
       </ModalContent>
     </Modal>
   );
