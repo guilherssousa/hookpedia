@@ -26,7 +26,7 @@ export default function Home({ hooks }) {
           cards={hooks.slice(0, 3)}
           emoji={
             <Image
-              src="/sparkles.png"
+              src="/sparkles.webp"
               alt="Brilho!"
               boxSize={{ base: "35px", md: "20px", lg: "40px" }}
               display="inline"
