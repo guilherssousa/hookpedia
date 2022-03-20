@@ -1,5 +1,4 @@
 import {
-  chakra,
   Box,
   Button,
   Flex,
@@ -12,7 +11,7 @@ import {
 
 function Header() {
   return (
-    <chakra.div
+    <Box
       textColor="white"
       bgColor="gray.800"
       bgImage="url('/pattern.svg'), radial-gradient(#4299E120 10%, #1A202C)"
@@ -35,12 +34,13 @@ function Header() {
             lineHeight="normal"
           >
             A{" "}
-            <chakra.span
+            <Box
+              display="inline"
               bgGradient="linear(to-l, blue.400, blue.200, blue.300)"
               bgClip="text"
             >
               cola definitiva
-            </chakra.span>{" "}
+            </Box>{" "}
             para desenvolvedores React.
           </Heading>
           <Text
@@ -95,7 +95,7 @@ function Header() {
           </Stack>
         </Flex>
       </Box>
-    </chakra.div>
+    </Box>
   );
 }
 

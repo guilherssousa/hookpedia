@@ -57,7 +57,11 @@ function Navbar() {
             ></Image>
           </Link>
           <HStack>
-            <Box textColor="white" cursor="default">
+            <Box
+              textColor="white"
+              cursor="default"
+              display={{ base: "none", md: "block" }}
+            >
               <Kbd
                 bg="transparent"
                 style={{
