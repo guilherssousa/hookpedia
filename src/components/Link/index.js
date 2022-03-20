@@ -2,7 +2,7 @@ import NextLink from "next/link";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-function Link({ children, isExternal, href, ...rest }) {
+function Link({ children, isExternal, href, hideIcon, ...rest }) {
   if (isExternal)
     return (
       <ChakraLink
@@ -13,7 +13,7 @@ function Link({ children, isExternal, href, ...rest }) {
         {...rest}
       >
         {children}
-        {isExternal && <ExternalLinkIcon mx="2" />}
+        {isExternal && !hideIcon && <ExternalLinkIcon mx="2" />}
       </ChakraLink>
     );
 

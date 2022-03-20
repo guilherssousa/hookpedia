@@ -7,12 +7,12 @@ import {
   Button,
   useEventListener,
   useDisclosure,
-  Link,
   Kbd,
 } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 
 import { SearchPalette } from "components/SearchPalette";
+import { Link } from "components/Link";
 
 function Navbar() {
   const [scrollOffset, setScrollOffset] = useState(false);
@@ -82,6 +82,14 @@ function Navbar() {
             >
               <Search2Icon color="white" w={6} h={6} />
             </Button>
+
+            <Link
+              href="https://github.com/guilherssousa/hookpedia"
+              isExternal
+              hideIcon
+            >
+              <Image src="/github.svg" w={6} h={6} color="#fff" />
+            </Link>
           </HStack>
         </Flex>
       </Box>

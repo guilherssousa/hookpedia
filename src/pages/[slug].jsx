@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import moment from "moment";
 
-import { Box, Heading, Text, Stack } from "@chakra-ui/react";
+import { Box, Heading, Text, Stack, Flex, Image } from "@chakra-ui/react";
 
 import { Navbar } from "components/Navbar";
 import { SearchPalette } from "components/SearchPalette";
@@ -51,7 +51,16 @@ function HookPage(props) {
           borderTopColor="gray.600"
         >
           <Box maxW="container.lg" mx="auto">
-            <Heading mb="4">{title}</Heading>
+            <Flex align="center" justify="space-between">
+              <Heading mb="4">{title}</Heading>
+              <Link
+                isExternal
+                hideIcon
+                href={`https://twitter.com/intent/tweet?text=Confira "${title}" na Hookpedia! https://hookpedia.now.sh/${title}`}
+              >
+                <Image src="/twitter.svg" w={8} h={8}></Image>
+              </Link>
+            </Flex>
 
             <Stack
               direction={{ base: "column", md: "row" }}
