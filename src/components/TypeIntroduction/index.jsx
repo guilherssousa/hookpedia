@@ -20,12 +20,9 @@ function TypeIntroduction() {
           <Box w={{ base: "100%", md: "50%" }}>
             <Heading>Está precisando de tipagem? Vamos te ajudar.</Heading>
             <Text mt={[1, 2, 4]} fontSize="xl" color="gray.300" maxW="xl">
-              Boa parte de nossos hooks podem ser achados tanto em Typescript.
-              Caso você não consiga achar, você mesmo pode enviar uma tipagem
-              manualmente e submeter a revisão para ser adicionada ao site.
-            </Text>
-            <Text mt={[1, 2, 4]} fontSize="xl" color="gray.300" maxW="xl">
-              Para checar se um hook possui tipagem, procure por esse botão:
+              Boa parte de nossos hooks podem ser achados tanto em Javascript,
+              quanto em Typescript. Para checar se um hook possui tipagem,
+              procure por esse botão:
               <Button
                 mt="4"
                 colorScheme={!showTypes ? "blue" : "yellow"}
@@ -34,6 +31,10 @@ function TypeIntroduction() {
               >
                 Veja em {!showTypes ? "TypeScript" : "JavaScript"}
               </Button>
+            </Text>
+            <Text mt={[1, 2, 4]} fontSize="xl" color="gray.300" maxW="xl">
+              Caso você não consiga achar, você mesmo pode enviar uma tipagem
+              manualmente e submeter a revisão para ser adicionada ao site.
             </Text>
           </Box>
           <Flex
