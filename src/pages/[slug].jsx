@@ -102,6 +102,9 @@ function HookPage(props) {
                       isCodeSwitchAvailable={isCodeSwitchAvailable}
                       handleSwitchCodeClick={handleSwitchCodeClick}
                       expected={className}
+                      customStyle={{
+                        marginTop: "1.5em",
+                      }}
                     >
                       {children}
                     </Code>

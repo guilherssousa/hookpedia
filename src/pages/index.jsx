@@ -5,6 +5,7 @@ import { Image, Box } from "@chakra-ui/react";
 import { SEO } from "components/SEO";
 import { Navbar } from "components/Navbar";
 import { Header } from "components/Header";
+import { TypeIntroduction } from "components/TypeIntroduction";
 import { Presentation } from "components/Presentation";
 import { Highlights } from "components/Highlights";
 import { Footer } from "components/Footer";
@@ -35,6 +36,7 @@ export default function Home({ hooks }) {
           }
         />
 
+        <TypeIntroduction />
         <Presentation />
         <Footer />
       </Box>

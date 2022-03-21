@@ -14,6 +14,7 @@ function Code({
   expected,
   isCodeSwitchAvailable,
   handleSwitchCodeClick,
+  customStyle,
 }) {
   if (!expected) {
     return <code>{children}</code>;
@@ -41,17 +42,15 @@ function Code({
           </Button>
         </Box>
       )}
-      <div>
+      <>
         <SyntaxHighlighter
           language={lang}
           style={atomDark}
-          customStyle={{
-            marginTop: "1.5em",
-          }}
+          customStyle={customStyle}
         >
           {children}
         </SyntaxHighlighter>
-      </div>
+      </>
     </>
   );
 }
