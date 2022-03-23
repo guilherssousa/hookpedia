@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 
 import { Box, Heading, Text, Stack, Flex, Image } from "@chakra-ui/react";
 
+import { SEO } from "components/SEO";
 import { Navbar } from "components/Navbar";
 import { SearchPalette } from "components/SearchPalette";
 import { Footer } from "components/Footer";
@@ -37,6 +38,7 @@ function HookPage(props) {
     <>
       <Head>
         <title>{title} | Hookpedia</title>
+        <SEO title={`${title} | Hookpedia`} />
       </Head>
       <Box bg="gray.800">
         <Navbar />
@@ -57,7 +59,12 @@ function HookPage(props) {
                 hideIcon
                 href={`https://twitter.com/intent/tweet?text=Confira "${title}" na Hookpedia! https://hookpedia.now.sh/${title}`}
               >
-                <Image src="/twitter.svg" w={8} h={8}></Image>
+                <Image
+                  src="/twitter.svg"
+                  alt="Compartilhar no Twitter"
+                  w={8}
+                  h={8}
+                ></Image>
               </Link>
             </Flex>
 
