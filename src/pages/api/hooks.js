@@ -18,8 +18,8 @@ export async function getAllHooks() {
 
     hooks.push({
       slug: post.replace(".md", ""),
-      title: meta.data.title,
       description,
+      ...meta.data,
     });
   }
 

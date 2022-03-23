@@ -26,7 +26,7 @@ function Link({ children, isExternal, href, hideIcon, ...rest }) {
         color: "#fff",
       }}
     >
-      <ChakraLink mx="2" {...rest}>
+      <ChakraLink mx="2" boxShadow={"none!important"} {...rest}>
         {children}
       </ChakraLink>
     </NextLink>
