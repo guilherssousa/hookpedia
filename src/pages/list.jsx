@@ -43,7 +43,10 @@ function ListPage({ hooks }) {
                       <Box>
                         <Heading as="h3" fontSize="2xl">
                           {hook.title}
-                          <chakra.span ml="2">
+                          <chakra.span
+                            ml={{ base: 0, md: 2 }}
+                            display={{ base: "block", md: "inline" }}
+                          >
                             <chakra.span
                               fontSize="sm"
                               px={2}
