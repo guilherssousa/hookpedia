@@ -28,6 +28,7 @@ function ListPage({ hooks }) {
                 {hooks.map((hook) => (
                   <Link
                     href={`/${hook.title}`}
+                    key={hook.title}
                     _hover={{ textDecoration: "none" }}
                   >
                     <Flex
@@ -35,7 +36,6 @@ function ListPage({ hooks }) {
                       justify={"space-between"}
                       borderRadius="md"
                       bg="gray.700"
-                      key={hook.title}
                       _hover={{
                         bg: "gray.600",
                       }}
