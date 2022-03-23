@@ -11,11 +11,6 @@ links:
     description: Uma implementação mais robusta e configurável desse Hook.
 ---
 
-This hook allows you to easily detect when an element is visible on the
-screen as well as specify how much of the element should be visible before being
-considered on screen. Perfect for lazy loading images or triggering animations when
-the user has scrolled down to a particular section.
-
 Esse hook te permite facilmente detectar quando um elemento é visível na tela e
 também especificar o quanto do elemento deve estar visível antes de ser considerado dentro da tela.
 Perfeito para Lazy loading de imagens ou ativar animações quando o usuário
