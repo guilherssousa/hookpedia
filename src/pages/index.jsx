@@ -21,7 +21,7 @@ export default function Home({ hooks }) {
 
       <Box bg="gray.800">
         <Navbar />
-        <Header />
+        <Header amount={hooks.length} />
         <Highlights
           title="Os melhores Hooks"
           cards={hooks.slice(0, 3)}

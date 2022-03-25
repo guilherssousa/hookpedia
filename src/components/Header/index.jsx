@@ -10,7 +10,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-function Header() {
+function Header({ amount }) {
   return (
     <Box
       textColor="white"
@@ -52,7 +52,7 @@ function Header() {
             textAlign="center"
           >
             Um repositório de Hooks do React, feito pela comunidade para a
-            comunidade. Atualmente temos 39 hooks!
+            comunidade. Atualmente temos {amount} hooks!
           </Text>
 
           <Stack mt="4" direction={{ base: "column", md: "row" }}>
