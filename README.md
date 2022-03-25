@@ -16,6 +16,8 @@
 - [Tabela de Conteúdo](#tabela-de-conte%C3%BAdo)
 - [Sobre o Projeto](#sobre-o-projeto)
   - [Feito Com](#feito-com)
+- [Funções](#features)
+- [Roadmap](#features)
 - [Contribuição](#contribui%C3%A7%C3%A3o)
 - [Licença](#licen%C3%A7a)
 - [Contato](#contato)
@@ -42,6 +44,22 @@ Abaixo segue o que foi utilizado na criação do website:
 - [Axios](https://github.com/axios/axios) - O Axios é um cliente HTTP baseado em Promises para Browser e NodeJS;
 - [ESLint](https://eslint.org/) - O ESLint é uma ferramenta de lint plugável para JavaScript e JSX;
 - [Prettier](https://prettier.io/) - O Prettier atualiza seu código automaticamente seguindo os padrões que você quiser toda vez salva o arquivo;
+
+<!-- FEATURES -->
+
+## Funções
+
+- Você pode apertar Cntrl/Cmd + K para abrir uma caixa de busca de Hooks.
+- Você pode usar o botão "Veja em TypeScript/JavaScript" para alterar entre código com ou sem tipagem.
+- Você pode compartilhar o link do código de algum hook via Twitter.
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+* [ ] Adicionar contador de favoritos em Hooks
+* [ ] Adicionar comentários nas páginas de Hooks
+* [ ] Criar página de instruções para contribuição
 
 <!-- CONTRIBUTING -->
 
