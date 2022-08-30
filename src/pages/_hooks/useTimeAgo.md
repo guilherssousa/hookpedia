@@ -19,7 +19,7 @@ export function useTimeAgo(compareDate) {
 	function getTimeAgoFromNow(date) {
 		return formatDistance(date, new Date(), {
 			locale: ptBR,
-			addSufix: true
+			addSuffix: true
 		});
 	}
 
@@ -52,7 +52,7 @@ export function useTimeAgo(compareDate: Date) {
 	function getTimeAgoFromNow(date: Date) {
 		return formatDistance(date, new Date(), {
 			locale: ptBR,
-			addSufix: true
+			addSuffix: true
 		});
 	}
 
